@@ -6,10 +6,10 @@ import cors from "cors"
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: "16kb" }));
-// app.use((req, res, next) => {
-// 	res.setHeader("Content-Security-Policy", "default-src 'none'; font-src *;");
-// 	next();
-// });
+app.use((req, res, next) => {
+	res.setHeader("Content-Security-Policy", "default-src 'none'; font-src *;");
+	next();
+});
 app.use(express.static("public"));
 app.use(express.urlencoded({ limit: "16kb", extended: true }));
 
