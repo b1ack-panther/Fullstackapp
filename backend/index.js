@@ -1,21 +1,27 @@
 import express from "express";
 import { PORT } from "./configure.js";
 import fs from "fs";
-import cors from "cors"
+import cors from "cors";
 
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: "16kb" }));
-app.use((req, res, next) => {
-	res.setHeader("Content-Security-Policy", "default-src 'none'; font-src *;");
-	next();
-});
 app.use(express.static("public"));
 app.use(express.urlencoded({ limit: "16kb", extended: true }));
 
+app.use((req, res, next) => {
+	res.setHeader(
+		"Content-Security-Policy",
+		"default-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"
+	);
+	next();
+});
+// app.use((req, res, next) => {
+// 	res.setHeader("Content-Security-Policy", "default-src 'none'; font-src *;");
+// 	next();
+// });
 
 function parseCSVAndDownsample(csvData, interval) {
-
 	var lines = csvData.split("\n");
 	var data = [];
 	lines.forEach(function (line) {
@@ -35,7 +41,7 @@ function parseCSVAndDownsample(csvData, interval) {
 	var startDate = new Date(data[0].timestamp);
 
 	data.forEach(function (entry) {
-    var currentDate = new Date(entry.timestamp);
+		var currentDate = new Date(entry.timestamp);
 		if (currentDate - startDate < interval) {
 			sum += entry.profit;
 			count++;
@@ -60,21 +66,19 @@ function parseCSVAndDownsample(csvData, interval) {
 }
 
 app.get("/", (req, res) => {
-	res.send("Server is running")
-})
+	res.send("Server is running");
+});
 
 app.get("/data", (req, res) => {
 	fs.readFile("dataset.csv", "utf8", (err, data) => {
 		if (err) {
-			console.error("Error reading file:", err);
-			return res.status(500).json({ error: "Error reading file" });
+			console.error("Error while reading file:", err);
+			return res.status(500).json({ error: "Error while reading file" });
 		}
 
-		var downsampledData = parseCSVAndDownsample(data, 1500000000); 
+		var downsampledData = parseCSVAndDownsample(data, 1500000000);
 
-		res
-			.status(200)
-			.json(downsampledData );
+		res.status(200).json(downsampledData);
 	});
 });
 
