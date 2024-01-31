@@ -1,0 +1,40 @@
+.revenues-body {
+	display: flex;
+	min-width: 320px;
+	/* height: 250px; */
+	padding: var(--md-pd);
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	flex: 1 1;
+
+	h3 {
+		padding-bottom: var(--sm-pd);
+	}
+
+	div {
+		display: flex;
+		align-items: center;
+		h2 {
+			font-size: 48px;
+			letter-spacing: -2px;
+			font-weight: 500;
+			letter-spacing: -2px;
+		}
+	}
+
+	p {
+		color: var(--gray);
+		font-size: 14px;
+		letter-spacing: -0.3px;
+	}
+	a {
+    margin-top: auto;
+		letter-spacing: -0.3px;
+		text-decoration: none;
+		font-size: 14px;
+		color: var(--Dark-Orange, #734a00);
+    display: flex;
+    align-items: center;
+	}
+}

@@ -1,0 +1,35 @@
+.new-deals-body {
+	padding: 24px;
+	min-width: 340px;
+  flex: 1.2;
+
+	h2 {
+		font-size: 20px;
+		font-weight: 600;
+		letter-spacing: -0.2px;
+		padding-bottom: 16px;
+	}
+}
+
+.deals {
+	display: flex;
+	gap: 6px;
+	flex-wrap: wrap;
+	& > div {
+    flex: 1;
+    background-color: var(--light-orange);
+    border-radius: 16px;
+		padding: 11px;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		/* max-width: min-content; */
+		p {
+			white-space: nowrap;
+			font-size: 13px;
+			font-weight: 400;
+			letter-spacing: -0.3px;
+			color: var(--dark-orange);
+		}
+	}
+}

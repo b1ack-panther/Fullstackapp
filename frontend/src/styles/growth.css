@@ -1,0 +1,118 @@
+.growth-body {
+	min-width: 400px;
+	display: grid;
+	grid-template-columns: repeat(1fr, 3);
+	gap: 16px;
+	border-radius: 0 !important;
+	background-color: var(--light-gray) !important;
+
+	& > div {
+		background-color: #fff;
+		border-radius: 16px;
+	}
+}
+
+.growth-main {
+	grid-column: 1/4;
+	width: 100%;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	align-items: center;
+}
+
+.growth-header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 16px;
+	h3 {
+		font-weight: 600;
+		font-size: 20px;
+		letter-spacing: -0.2px;
+	}
+
+	.sort > select {
+		color: var(--dark-gray);
+		font-size: 14px;
+		letter-spacing: -0.3px;
+		cursor: pointer;
+	}
+}
+
+.growth-chart {
+	height: 160px;
+  width: 100%;
+}
+
+.widget {
+	gap: 16px;
+	flex: 1 1 0;
+	display: flex;
+	padding: 16px;
+	flex-direction: column;
+	min-height: 130px;
+
+	& > h3 {
+		color: var(--gray);
+		font-size: 16px;
+		font-weight: 600;
+		letter-spacing: -0.4px;
+	}
+
+	& > div {
+		width: 140px;
+		height: 60px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		h2 {
+			color: #734a00;
+			font-weight: 600;
+			font-size: 24px;
+			letter-spacing: -0.2px;
+		}
+	}
+}
+
+.top-month > div > h3 {
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--orange);
+	letter-spacing: -0.2px;
+}
+
+.top-year > div > h3 {
+	font-weight: 400;
+	color: var(--dark-gray);
+	font-size: 14px;
+	letter-spacing: -0.3px;
+}
+
+.top-buyer {
+	div {
+		img {
+			width: 24px;
+			height: 24px;
+			object-fit: cover;
+			border-radius: 100%;
+      margin-bottom: 8px;
+		}
+		h2 {
+			letter-spacing: -0.3px;
+			color: black;
+			font-size: 12px;
+			font-weight: 500;
+      margin-bottom: 4px;
+		}
+		p {
+			color: var(--dark-gray);
+			letter-spacing: -0.3px;
+			font-size: 10px;
+			font-weight: 400;
+		}
+	}
+}
