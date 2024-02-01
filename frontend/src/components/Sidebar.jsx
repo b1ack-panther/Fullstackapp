@@ -1,11 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/sidebar.css";
 import Logo from "../assets/Logo.svg";
 import AdminAvatar from "../assets/adminAvatar.png";
 
 const Sidebar = () => {
 	const [toggleMenu, setToggleMenu] = useState(true);
-	console.log(toggleMenu);
+
+	useEffect(() => {
+		window.addEventListener("resize", () => {
+			if (window.innerWidth < 840) {
+				setToggleMenu(false);
+			} else {
+				setToggleMenu(true);
+			}
+		});
+	}, []);
+
+	const optionOpener = () => {
+		const optionTypes = document.querySelectorAll(".option-types");
+		optionTypes.forEach((ele) => ele.classList.toggle("closed"));
+		document.querySelector(".customers").classList.toggle("closed");
+	}
+
 	return (
 		<div className={`sidebar ${toggleMenu ? "active" : "inactive"}`}>
 			<div className="toggle-menu" onClick={() => setToggleMenu(!toggleMenu)}>
@@ -52,9 +68,9 @@ const Sidebar = () => {
 						<path
 							d="M4.5 9L7.5 6L4.5 3"
 							stroke="#454545"
-							stroke-width="1.25"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							strokeWidth="1.25"
+							strokeLinecap="round"
+							strokeLinejoin="round"
 						/>
 					</svg>
 				)}
@@ -124,8 +140,22 @@ const Sidebar = () => {
 
 					{toggleMenu && (
 						<>
-							<a href="#">Customers</a>
+							<div className="customer-options">
+								<div onClick={optionOpener} className="main-customer">
+									<a>Customers </a>
+								</div>
+								<div className="option-types">
+									<a>Current</a>
+								</div>
+								<div className="option-types">
+									<a>New</a>
+								</div>
+								<div className="option-types">
+									<a>Negotiating</a>
+								</div>
+							</div>
 							<svg
+								onClick={optionOpener}
 								width="16"
 								height="16"
 								viewBox="0 0 16 16"
@@ -143,6 +173,7 @@ const Sidebar = () => {
 						</>
 					)}
 				</div>
+
 				<div className="all-reports">
 					<svg
 						width="16"

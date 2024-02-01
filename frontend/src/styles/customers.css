@@ -1,12 +1,12 @@
 .customers-body {
 	display: flex;
-	height: 400px;
+	/* height: 400px; */
 	padding: 24px 0px;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 16px;
-	flex: 1 1 300px;
-  min-width: 400px;
+	flex: 1 1;
+  min-width: 320px;
 
   
   a{
@@ -34,7 +34,7 @@
 
 	h3 {
 		font-size: 20px;
-		fontWeight: 600;
+		font-weight: 600;
 		letter-spacing: -0.2px;
 	}
 }
@@ -46,14 +46,14 @@
 	p,
 	select {
 		font-size: 14px;
-		fontWeight: 400;
+		font-weight: 400;
 		color: var(--dark-gray);
 		letter-spacing: -0.3px;
 	}
 
 	select {
 		border: none;
-		fontWeight: 500;
+		font-weight: 500;
 		cursor: pointer;
 		&:focus {
 			outline: none;
@@ -88,6 +88,7 @@
 		height: 32px;
 		border-radius: 100%;
 		object-fit: cover;
+		margin: auto 0;
 	}
 
 }
@@ -99,7 +100,7 @@
   
 	h4 {
 		font-size: 14px;
-		fontWeight: 500;
+		font-weight: 500;
 		letter-spacing: -0.3px;
 	}
   p{

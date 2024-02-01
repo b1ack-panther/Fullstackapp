@@ -19,7 +19,7 @@ const Growth = () => {
 					</div>
 				</div>
 				<div className="growth-chart">
-					<ResponsiveContainer width="100%" height="100%">
+					<ResponsiveContainer >
 						<GrowthChart />
 					</ResponsiveContainer>
 				</div>

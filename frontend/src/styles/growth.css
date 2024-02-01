@@ -1,10 +1,12 @@
 .growth-body {
-	min-width: 400px;
+	min-width: 540px;
 	display: grid;
 	grid-template-columns: repeat(1fr, 3);
 	gap: 16px;
 	border-radius: 0 !important;
 	background-color: var(--light-gray) !important;
+	flex: 1 1;
+	/* overflow: hidden; */
 
 	& > div {
 		background-color: #fff;
@@ -12,9 +14,10 @@
 	}
 }
 
+
 .growth-main {
 	grid-column: 1/4;
-	width: 100%;
+	/* width: 100%; */
 	padding: 24px;
 	display: flex;
 	flex-direction: column;

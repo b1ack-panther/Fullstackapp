@@ -28,7 +28,7 @@ useEffect(() => {
 				"fontWeight": "500",
 				"letterSpacing": "-0.3px",
 			}}
-			width={500}
+			width={450}
 			height={160}
 			data={data}
 			margin={{ top: 10, right: 20, left: -20 }}

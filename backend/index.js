@@ -1,6 +1,5 @@
 import express from "express";
 import { PORT } from "./configure.js";
-import fs from "fs";
 import cors from "cors";
 import {datafile} from "./datafile.js"
 
@@ -67,15 +66,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/data", (req, res) => {
-	// fs.readFile("dataset.csv", "utf8", (err, data) => {
-	// 	if (err) {
-	// 		console.error("Error while reading file:", err);
-	// 		return res.status(500).json({ error: "Error while reading file" });
-	// 	}
 		var downsampledData = parseCSVAndDownsample(datafile, 1500000000);
-
 		res.status(200).json(downsampledData);
-	// });
 });
 
 app.listen(PORT, () => {

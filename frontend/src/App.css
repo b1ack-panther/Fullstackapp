@@ -55,6 +55,8 @@ body {
 .dashboard-mid,
 .dashboard-bottom {
 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 	gap: var(--sm-pd);
   width: 100%;
 
@@ -63,3 +65,12 @@ body {
 		background: white;
 	}
 }
+
+
+/* @media (max-width: 1250px) {
+	.dashboard-top,
+.dashboard-mid,
+.dashboard-bottom{
+		flex-direction: column;
+	}
+} */
