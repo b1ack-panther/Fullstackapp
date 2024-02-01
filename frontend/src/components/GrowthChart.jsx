@@ -14,7 +14,7 @@ import axios from "axios"
 const GrowthChart = () => {
   const [data, setData] = useState([])
 useEffect(() => { 
-  axios.get("http://localhost:5555/data")
+  axios.get("https://fullstackapp-ebon.vercel.app/data")
     .then((res) => {console.log(res); setData(res.data) })
   .catch((err)=>{console.log(err)})
 }, [])
