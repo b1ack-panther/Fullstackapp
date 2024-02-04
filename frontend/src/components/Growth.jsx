@@ -19,9 +19,7 @@ const Growth = () => {
 					</div>
 				</div>
 				<div className="growth-chart">
-					<ResponsiveContainer >
 						<GrowthChart />
-					</ResponsiveContainer>
 				</div>
 			</div>
 			<div className="widget top-month">
